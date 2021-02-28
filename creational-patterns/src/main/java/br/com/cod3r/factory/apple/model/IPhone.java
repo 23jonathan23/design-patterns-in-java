@@ -1,14 +1,7 @@
-package br.com.cod3r.abstractfactory.apple.model.iphone;
-
-import br.com.cod3r.abstractfactory.apple.factory.abstractFactory.CountryRulesAbstractFactory;
+package br.com.cod3r.factory.apple.model;
 
 public abstract class IPhone {
-	CountryRulesAbstractFactory rules;
 	
-	public IPhone(CountryRulesAbstractFactory rules) {
-		this.rules = rules;
-	}
-
 	public abstract void getHardware();
 	
 	public void assemble() {
