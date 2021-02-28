@@ -1,9 +1,9 @@
-package br.com.cod3r.factory.apple.model;
+package br.com.cod3r.factory.apple.factorymethod.model;
 
 public abstract class IPhone {
-	
+
 	public abstract void getHardware();
-	
+
 	public void assemble() {
 		System.out.println("Assembling all the hardwares");
 	}
