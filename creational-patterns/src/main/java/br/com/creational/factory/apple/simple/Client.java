@@ -6,14 +6,12 @@ import br.com.creational.factory.apple.simple.model.IPhone;
 public class Client {
 
 	public static void main(String[] args) {
-		IPhoneSimpleFactory genIphoneFactory = new IPhoneSimpleFactory();
-
 		System.out.println("### Ordering an iPhone X");
-		IPhone iphone = genIphoneFactory.orderIPhone("X", "standard");
+		IPhone iphone = IPhoneSimpleFactory.orderIPhone("X", "standard");
 		System.out.println(iphone);
 
 		System.out.println("\n\n### Ordering an iPhone 11 HighEnd");
-		IPhone iphone2 = genIphoneFactory.orderIPhone("11", "highEnd");
+		IPhone iphone2 = IPhoneSimpleFactory.orderIPhone("11", "highEnd");
 		System.out.println(iphone2);
 	}
 }

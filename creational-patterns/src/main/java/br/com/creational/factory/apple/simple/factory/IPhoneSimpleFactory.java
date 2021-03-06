@@ -8,7 +8,7 @@ import br.com.creational.factory.apple.simple.model.IPhone11Pro;
 
 public class IPhoneSimpleFactory {
 
-    public IPhone orderIPhone(String generation, String level) {
+    public static IPhone orderIPhone(String generation, String level) {
         IPhone device = null;
 
         device = createIPhone(generation, level);
@@ -24,7 +24,7 @@ public class IPhoneSimpleFactory {
         return device;
     }
 
-    private IPhone createIPhone(String generation, String level) {
+    private static IPhone createIPhone(String generation, String level) {
         if ("X".equals(generation)) {
             if ("standard".equals(level)) {
                 return new IPhoneX();
