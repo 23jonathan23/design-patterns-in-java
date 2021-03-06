@@ -7,9 +7,9 @@ import br.com.creational.factory.apple.halfSimple.model.IPhoneXSMax;
 public class IPhoneXFactory extends IPhoneFactory {
     @Override
     public IPhone createIPhone(String level) {
-        if (level.equals("standard")) {
+        if ("standard".equals(level)) {
             return new IPhoneX();
-        } else if (level.equals("highEnd")) {
+        } else if ("highEnd".equals(level)) {
             return new IPhoneXSMax();
         } else
             return null;
