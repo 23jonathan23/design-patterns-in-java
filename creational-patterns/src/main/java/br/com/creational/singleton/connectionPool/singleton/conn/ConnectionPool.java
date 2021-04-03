@@ -1,23 +1,28 @@
-package br.com.creational.singleton.connectionPool.conn;
+package br.com.creational.singleton.connectionPool.singleton.conn;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConnectionPool {
+	private static final ConnectionPool _singleton = new ConnectionPool();
 	private final static int POOL_SIZE = 2;
-	private List<Connection> connectionsPool;
+	private List<Connection> _connectionsPool;
 
-	public ConnectionPool() {
+	private ConnectionPool() {
 		System.out.println("Creating Connection Pool");
-		connectionsPool = new ArrayList<Connection>();
+		_connectionsPool = new ArrayList<Connection>();
 		for (int i = 0; i < POOL_SIZE; i++) {
-			connectionsPool.add(new Connection());
+			_connectionsPool.add(new Connection());
 		}
+	}
+
+	public static ConnectionPool getInstance() {
+		return _singleton;
 	}
 
 	public Connection getConnection() {
 		Connection avaiable = null;
-		for (Connection conn : connectionsPool) {
+		for (Connection conn : _connectionsPool) {
 			if (!conn.isInUse()) {
 				avaiable = conn;
 				break;

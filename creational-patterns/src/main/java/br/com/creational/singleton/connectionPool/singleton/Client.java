@@ -1,25 +1,25 @@
-package br.com.creational.singleton.connectionPool;
+package br.com.creational.singleton.connectionPool.singleton;
 
-import br.com.creational.singleton.connectionPool.conn.Connection;
-import br.com.creational.singleton.connectionPool.conn.ConnectionPool;
+import br.com.creational.singleton.connectionPool.singleton.conn.Connection;
+import br.com.creational.singleton.connectionPool.singleton.conn.ConnectionPool;
 
 public class Client {
 	public static void doQuery1() {
-		ConnectionPool pool = new ConnectionPool();
+		ConnectionPool pool = ConnectionPool.getInstance();
 		Connection conn = pool.getConnection();
 		if (conn != null)
 			conn.query("SELECT * FROM A1");
 	}
 
 	public static void doQuery2() {
-		ConnectionPool pool = new ConnectionPool();
+		ConnectionPool pool = ConnectionPool.getInstance();
 		Connection conn = pool.getConnection();
 		if (conn != null)
 			conn.query("SELECT * FROM A2");
 	}
 
 	public static void doQuery3() {
-		ConnectionPool pool = new ConnectionPool();
+		ConnectionPool pool = ConnectionPool.getInstance();
 		Connection conn = pool.getConnection();
 		if (conn != null)
 			conn.query("SELECT * FROM A3");

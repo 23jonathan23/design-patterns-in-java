@@ -1,4 +1,4 @@
-package br.com.creational.singleton.connectionPool.conn;
+package br.com.creational.singleton.connectionPool.singleton.conn;
 
 public class Connection {
 	private boolean inUse;
