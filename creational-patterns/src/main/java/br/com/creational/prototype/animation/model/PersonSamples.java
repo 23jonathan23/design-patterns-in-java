@@ -16,9 +16,18 @@ public class PersonSamples {
 	}
 
 	private void loadSamples() {
-		samples.put("stickMan", new Person("                   ", "        o          ", "       /|\\          ",
-				"_______/_\\___________"));
-		samples.put("fatMan", new Person("                   ", "       (^ ^)          ", "       <)  )\\         ",
-				"_______/__\\___________"));
+		samples.put("stickMan", new Person(
+			"                   ", 
+			"        o          ", 
+			"       /|\\          ",
+			"_______/_\\___________"
+		));
+		
+		samples.put("fatMan", new Person(
+			"                   ", 
+			"       (^ ^)          ", 
+			"       <)  )\\         ",
+			"_______/__\\___________"
+		));
 	}
 }
