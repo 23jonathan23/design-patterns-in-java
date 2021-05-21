@@ -3,7 +3,9 @@ package br.com.cod3r.decorator.swing;
 import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 
 public class Client {
 
@@ -14,7 +16,12 @@ public class Client {
 		frame.setSize(400,200);  
 		
 		JTextArea textArea = new JTextArea(10, 30);
-		frame.add(textArea);
+		JScrollPane scrollPane = new JScrollPane(textArea, 
+		ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+		ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		
+		// frame.add(textArea);
+		frame.add(scrollPane);
 		          
 		frame.setVisible(true);
 	}
