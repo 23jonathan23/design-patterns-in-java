@@ -1,22 +1,28 @@
 package br.com.cod3r.mediator.swing.components;
 
+import br.com.cod3r.mediator.swing.mediator.Mediator;
 
 public class State {
-	private int counter;
+	private int _counter;
+	private Mediator _mediator;
 	
-	public State() {
-		counter = 0;
+	public State(Mediator mediator) {
+		_counter = 0;
+		_mediator = mediator;
 	}
 	
 	public void addCount() {
-		counter++;
+		_counter++;
+		if(_counter == 10) {
+			_mediator.stop();
+		}
 	}
 
 	public int getCounter() {
-		return counter;
+		return _counter;
 	}
 
 	public void setCounter(int counter) {
-		this.counter = counter;
+		_counter = counter;
 	}
 }
