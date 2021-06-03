@@ -10,24 +10,24 @@ public class Bank implements BankOperations {
 	
 	public Bank() {
 		userDatabase = new HashMap<Long, User>();
-		userDatabase.put(123L, new User("User #1", 123L, "1234", 1000L));
-		userDatabase.put(456L, new User("User #2", 456L, "9999", 200L));
+		userDatabase.put(123L, new User("User #1", 123L, "1234", 1000));
+		userDatabase.put(456L, new User("User #2", 456L, "9999", 200));
 	}
 
 	@Override
-	public void deposit(Long account, Long amount) {
+	public void deposit(Long account, double amount) {
 		User user = userDatabase.get(account);
 		if(user == null) {
 			System.out.println("Invalid account");
 			return;
 		}
 		user.setBalance(user.getBalance() + amount);
-		System.out.println(String.format("%s +%d. New Balance: %d", 
+		System.out.println(String.format("%s +%f. New Balance: %f", 
 				user.getName(), amount, user.getBalance()));
 	}
 
 	@Override
-	public void withdraw(Long account, String passwd, Long amount) {
+	public void withdraw(Long account, String passwd, double amount) {
 		User user = userDatabase.get(account);
 		if(user == null) {
 			System.out.println("Invalid account");
@@ -42,7 +42,7 @@ public class Bank implements BankOperations {
 			return;
 		}
 		user.setBalance(user.getBalance() - amount);
-		System.out.println(String.format("%s -%d. New Balance: %d", 
+		System.out.println(String.format("%s -%f. New Balance: %f", 
 				user.getName(), amount, user.getBalance()));
 	}
 

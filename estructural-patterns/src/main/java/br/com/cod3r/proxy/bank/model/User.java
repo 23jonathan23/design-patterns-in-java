@@ -4,9 +4,9 @@ public class User {
 	private String name;
 	private Long accountNumber;
 	private String password;
-	private Long balance;
+	private double balance;
 	
-	public User(String name, Long accountNumber, String password, Long cash) {
+	public User(String name, Long accountNumber, String password, double cash) {
 		this.name = name;
 		this.accountNumber = accountNumber;
 		this.password = password;
@@ -37,11 +37,11 @@ public class User {
 		this.password = password;
 	}
 
-	public Long getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(Long cash) {
+	public void setBalance(double cash) {
 		this.balance = cash;
 	}
 
